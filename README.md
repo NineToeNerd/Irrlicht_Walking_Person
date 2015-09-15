@@ -10,7 +10,7 @@ The map in this example is a Quake3 map that came with the Irrlicht engine.
 
 This program was created for practicing purposes, in order for me to familiarize myself with graphics/game engines (irrlicht is somewhat a mix of the two).
 
-I have provided an executable file so anybody can preview the program. (Look in the releases folder)
+I have provided an executable file so anybody can preview the program. (Look in the debug folder)
 
 IMPORTANT INSTRUCTIONS:
 

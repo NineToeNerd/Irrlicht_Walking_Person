@@ -30,7 +30,7 @@ const f32 RUN_SPEED = 100 * SIZE_SCALE;
 const f32 ROTATION_SPEED = 30.f * SIZE_SCALE;
 const f32 CAMERA_ZOOM_SPEED = 15.f * SIZE_SCALE;
 
-const f32 GRAVITY = -1 * SIZE_SCALE;
+const f32 GRAVITY = -1 * SIZE_SCALE/2;
 
 enum
 {
@@ -78,11 +78,9 @@ int main()
 	if (device == 0)
 		return 1; // could not create device from driver type
 
-	//Get reference to video driver and scene manager
 	video::IVideoDriver* driver = device->getVideoDriver();
 	scene::ISceneManager* smgr = device->getSceneManager();
 
-    //Set the window caption
 	device->setWindowCaption(L"Walking Person test");
 
 	//Add scene with triangle selector for collision detection
@@ -145,7 +143,6 @@ int main()
 
 	smgr->setActiveCamera(cameraTP);
 
-	//Get collision manager for collision-dependent calculations in game
 	scene::ISceneCollisionManager* collMgr = smgr->getSceneCollisionManager();
 
 	//In order to do frame rate independent movement, we have to know
@@ -158,7 +155,7 @@ int main()
 	//Keep track of last frame the player jumped to restrict from flying
 	s32 lastFrameJump = -1;
 
-	//Keep camera changing from acting funny
+	//Keep camera type from toggling rapidly when pressing C
 	s32 lastCameraChange = -1;
 
 	//game loop
@@ -170,13 +167,14 @@ int main()
 		const f32 frameDeltaTime = (f32)(now - then) / 1000.f; //in seconds
 		then = now;
 
-		 //Set up variables for later calculations
+		 //Set up variables for later movement and rotation calculations
 		core::vector3df position = player->getPosition();
 		core::vector3df oldPosition = position;
 		core::vector3df camPosition = cameraTP->getAbsolutePosition();
 		camPosition.Y = position.Y; //so the fwdVector doesn't point down
 		core::vector3df fwdVector = (position - camPosition).normalize();
 		core::vector3df rotation = player->getRotation();
+
 		s32 startFrame = player->getStartFrame();
 
 		//Rotate player if holding the left/right arrow keys
@@ -213,17 +211,6 @@ int main()
         	position += positionDiff;
         else if (receiver.IsKeyDown(KEY_DOWN))
           	position -= positionDiff;
-
-/*
- *      --USE THIS CODE IF USING THE ARROW KEYS TO MOVE INSTEAD OF ROTATE--
- *
-        fwdVector.rotateXZBy(-90, core::vector3df(0,0,0));
-
-        if (receiver.IsKeyDown(KEY_LEFT))
-        	position -= fwdVector;
-        else if (receiver.IsKeyDown(KEY_RIGHT))
-            position += fwdVector;
-*/
 
         player->setPosition(position);
 
@@ -287,18 +274,6 @@ int main()
         	fwdVector.X *= 20*SIZE_SCALE;
         	fwdVector.Z *= 20*SIZE_SCALE;
         	cameraFP->setTarget(position + fwdVector);
-        }
-
-
-        if (frames % 25 == 0)
-        {
-        	//Debugging print statements here
-            /*
-            std::cout << "Camera position: (" << camPosition.X << ", " << camPosition.Y << ", " <<
-            		camPosition.Z << ") " << std::endl;
-            std::cout << "Target position: (" << position.X << ", " << position.Y << ", " <<
-            		position.Z << ") " << std::endl;
-            */
         }
 
         //Draw the scene

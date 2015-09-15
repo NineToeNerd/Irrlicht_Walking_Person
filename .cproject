@@ -102,6 +102,27 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.release.2130358963.1520203632" name="/" resourcePath="Release">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.release.174469974" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.release" unusedChildren="">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.release" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.release"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.2656324" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.611394469"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.789865466" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.902853849">
+								<option id="gnu.cpp.compiler.option.optimization.flags.328905036" name="Other optimization flags" superClass="gnu.cpp.compiler.option.optimization.flags" value="-ffast-math" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.include.paths.932932087" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/tracy/irrlicht-1.8.1"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1727138646" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.741445955" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.1866618558">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.642737697" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.138642716" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release.250656101"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.156385422" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.49538520"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.release.1385635571" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.release.170476277">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1187941981" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -126,4 +147,14 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/walking_person"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/walking_person"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>
