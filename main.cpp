@@ -105,7 +105,7 @@ int main()
 
 	//Create a player node to move around
     scene::IAnimatedMeshSceneNode* player = smgr->addAnimatedMeshSceneNode(
-    		smgr->getMesh("./media/person1.3ds"));
+    		smgr->getMesh("./media/jgAnimeGirl1.b3d"));
 	if (player)
 	{
 		player->setScale(core::vector3df(1,1,1)*SIZE_SCALE);

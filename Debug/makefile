@@ -43,7 +43,7 @@ all: walking_person
 walking_person: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L/home/tracy/Downloads/irrlicht-1.8.1/lib/Linux -o "walking_person" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/home/tracy/irrlicht-1.8.1/lib/Linux -o "walking_person" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
